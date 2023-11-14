@@ -65,7 +65,7 @@ export const NumberOfItemsInCart = styled.span<props>`
   font-size: 16px;
   font-weight: bold;
   background: ${(props) => (props.$hasItems ? "red" : "")};
-  color: ${(props) => (props.hasItems ? "#fff" : "#000")};
+  color: ${(props) => (props.$hasItems ? "#fff" : "#000")};
   width: 25px;
   height: 25px;
   display: flex;
