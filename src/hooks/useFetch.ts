@@ -6,13 +6,14 @@ export type Product = {
   brand: string;
   description: string;
   photo: string;
+  quantity: number;
   price: string;
   createdAt: string;
   updatedAt: string;
 };
 
 export interface Products {
-  products?: Product[];
+  products: Product[] | null;
 }
 
 export const useFetch = async (url: string) => {

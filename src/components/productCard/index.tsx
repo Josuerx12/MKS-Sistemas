@@ -1,25 +1,27 @@
+import { CartContext } from "../../context/cartContext";
 import { Product } from "../../hooks/useFetch";
 import {
   AddCartButton,
   AddCartIcon,
   Card,
-  CartHeader,
-  CartImg,
+  CardHeader,
+  CardImg,
   ProductDescription,
   ProductName,
   ProductPrice,
 } from "./styles";
 
 const ProductCard = ({ product }: { product: Product }) => {
+  const { addProductToCart } = CartContext();
   return (
     <Card>
-      <CartImg src={product.photo} alt={product.name} />
-      <CartHeader>
+      <CardImg src={product.photo} alt={product.name} />
+      <CardHeader>
         <ProductName>{product.name}</ProductName>
         <ProductPrice>{product.price}</ProductPrice>
-      </CartHeader>
+      </CardHeader>
       <ProductDescription>{product.description}</ProductDescription>
-      <AddCartButton>
+      <AddCartButton onClick={() => addProductToCart(product)}>
         <AddCartIcon src="/bag.svg" /> Comprar
       </AddCartButton>
     </Card>

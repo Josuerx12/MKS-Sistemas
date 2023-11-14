@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type props = {
+  $hasItems: boolean;
+};
+
 export const NavbarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -44,6 +48,11 @@ export const CartButton = styled.button`
   border-radius: 8px;
   width: 90px;
   height: 45px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background: #ccc;
+  }
 `;
 
 export const CartIcon = styled.img`
@@ -52,7 +61,16 @@ export const CartIcon = styled.img`
   margin-right: 5px;
 `;
 
-export const NumberOfItemsInCart = styled.span`
+export const NumberOfItemsInCart = styled.span<props>`
   font-size: 16px;
   font-weight: bold;
+  background: ${(props) => (props.$hasItems ? "red" : "")};
+  color: ${(props) => (props.hasItems ? "#fff" : "#000")};
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
 `;

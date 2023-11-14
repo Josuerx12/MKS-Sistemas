@@ -10,20 +10,19 @@ export const Card = styled.div`
   justify-content: space-between;
 `;
 
-export const CartHeader = styled.header`
+export const CardHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 38px;
-  padding: 0 1rem;
-  gap: 0.625rem;
+  gap: 1rem;
+  margin: auto;
 `;
 
-export const CartImg = styled.img`
+export const CardImg = styled.img`
   margin: auto;
   width: 138px;
   height: 138px;
-  border-radius: 8px 8px 0 0;
 `;
 
 export const AddCartButton = styled.button`
@@ -39,11 +38,17 @@ export const AddCartButton = styled.button`
   color: #fff;
   background-color: #0f52ba;
   border-radius: 0 0 8px 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background: #0f12ba;
+  }
 `;
 
 export const AddCartIcon = styled.img`
-  width: 12px;
-  height: 13.5px;
+  width: 15px;
+  height: 17.5px;
 `;
 
 export const ProductPrice = styled.button`
@@ -65,9 +70,11 @@ export const ProductName = styled.h4`
 
 export const ProductDescription = styled.p`
   font-weight: 300;
+  width: 90%;
+  margin: auto;
+
   font-size: 10px;
   text-align: start;
   line-height: 12px;
   color: #2c2c2c;
-  padding: 1rem;
 `;
